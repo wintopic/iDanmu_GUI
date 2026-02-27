@@ -124,14 +124,16 @@ name,commentId,url,fileName,anime,episode,format,disabled
 
 仓库已配置工作流：`.github/workflows/build-exe.yml`
 
-- 自动触发：`push(main/master)`、`pull_request`、`tag(v*)`
+- 自动触发：`push(main/master)`、`pull_request`、`tag(v* / *.*.*)`、`release published`
 - 手动触发：`workflow_dispatch`
 - 构建环境：`windows-latest`
 - 产物：
   - `iDanmu-win-x64.zip`
   - `iDanmuMini-win-x64.zip`
 - 下载方式：在 GitHub Actions 运行页的 `windows-exe-bundles` artifact 下载
-- Tag 发布：推送 `v*` 标签时会自动把 zip 附加到 GitHub Release
+- 发行版上传：
+  - 推送版本标签（如 `v1.2.3` 或 `1.2.3`）会自动创建/更新 Release 并上传 zip
+  - 在 GitHub 页面发布 Release（`published`）也会自动上传 zip 资源
 
 ## 校验命令
 
