@@ -47,6 +47,6 @@ python .\danmu_gui.py
 ```
 
 输出：
-- `dist\iDanmu\iDanmu.exe`
+- `dist\iDanmu.exe`
 
 说明：运行 EXE 不需要 Node.js。

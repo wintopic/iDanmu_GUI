@@ -43,23 +43,20 @@ jobs:
       - name: Pack build outputs
         shell: pwsh
         run: |
-          if (-not (Test-Path "dist\iDanmu\iDanmu.exe")) {
+          if (-not (Test-Path "dist\iDanmu.exe")) {
             throw "iDanmu.exe was not generated."
           }
-          if (-not (Test-Path "mini_gui\dist\iDanmuMini\iDanmuMini.exe")) {
+          if (-not (Test-Path "mini_gui\dist\iDanmuMini.exe")) {
             throw "iDanmuMini.exe was not generated."
           }
-
-          Compress-Archive -Path "dist\iDanmu" -DestinationPath "iDanmu-win-x64.zip" -Force
-          Compress-Archive -Path "mini_gui\dist\iDanmuMini" -DestinationPath "iDanmuMini-win-x64.zip" -Force
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: windows-exe-bundles
+          name: windows-exe-files
           path: |
-            iDanmu-win-x64.zip
-            iDanmuMini-win-x64.zip
+            dist/iDanmu.exe
+            mini_gui/dist/iDanmuMini.exe
           retention-days: 14
 
       - name: Publish GitHub Release assets
@@ -67,7 +64,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ github.event_name == 'release' && github.event.release.tag_name || github.ref_name }}
-          artifacts: iDanmu-win-x64.zip,iDanmuMini-win-x64.zip
+          artifacts: dist/iDanmu.exe,mini_gui/dist/iDanmuMini.exe
           artifactErrorsFailBuild: true
           allowUpdates: true
           replacesArtifacts: true

@@ -32,6 +32,6 @@ python .\mini_gui.py
 ```
 
 输出：
-- `mini_gui\dist\iDanmuMini\iDanmuMini.exe`
+- `mini_gui\dist\iDanmuMini.exe`
 
 说明：运行 EXE 不需要 Node.js。

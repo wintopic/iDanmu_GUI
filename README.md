@@ -115,8 +115,8 @@ name,commentId,url,fileName,anime,episode,format,disabled
 ```
 
 输出：
-- `dist\iDanmu\iDanmu.exe`
-- `mini_gui\dist\iDanmuMini\iDanmuMini.exe`
+- `dist\iDanmu.exe`
+- `mini_gui\dist\iDanmuMini.exe`
 
 说明：EXE 运行时不需要 Node.js。
 
@@ -128,12 +128,12 @@ name,commentId,url,fileName,anime,episode,format,disabled
 - 手动触发：`workflow_dispatch`
 - 构建环境：`windows-latest`
 - 产物：
-  - `iDanmu-win-x64.zip`
-  - `iDanmuMini-win-x64.zip`
-- 下载方式：在 GitHub Actions 运行页的 `windows-exe-bundles` artifact 下载
+  - `iDanmu.exe`
+  - `iDanmuMini.exe`
+- 下载方式：在 GitHub Actions 运行页的 `windows-exe-files` artifact 下载
 - 发行版上传：
-  - 推送版本标签（如 `v1.2.3` 或 `1.2.3`）会自动创建/更新 Release 并上传 zip
-  - 在 GitHub 页面发布 Release（`published`）也会自动上传 zip 资源
+  - 推送版本标签（如 `v1.2.3` 或 `1.2.3`）会自动创建/更新 Release 并上传 exe
+  - 在 GitHub 页面发布 Release（`published`）也会自动上传 exe 资源
 
 ## 校验命令
 

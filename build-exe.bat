@@ -10,13 +10,13 @@ if errorlevel 1 (
 )
 
 echo [2/3] Build EXE...
-python -m PyInstaller --noconfirm --clean --windowed --onedir --name iDanmu danmu_gui.py
+python -m PyInstaller --noconfirm --clean --windowed --onefile --name iDanmu danmu_gui.py
 if errorlevel 1 (
   echo Build failed
   exit /b 1
 )
 
 echo [3/3] Done
-echo EXE: dist\iDanmu\iDanmu.exe
+echo EXE: dist\iDanmu.exe
 echo Note: Node.js is NOT required at runtime.
 exit /b 0
